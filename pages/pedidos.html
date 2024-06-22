@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABM Pedido</title>
+  <link rel="stylesheet" href="../estilos/pedidos.css">
+</head>
+<body>
+    <nav>
+        <div class="cambiarTema">
+            <button class="temaOscuro">🌙</button>
+        </div>
+        <div class="paginas">
+            <ul>
+                <li ><a href="#">Pedidos</a></li>
+                <li>Editar pedidos</li>
+                <li>Menu</li>
+                <li>Dar de alta rrhh</li>
+                <li><a href="pages/login.html">Salir</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Crear Nuevo Pedido</h1>
+        <div class="busqueda">
+            <label for="buscarSemana">Buscar por Semana:</label>
+            <input type="number" id="buscarSemana" min="1" max="4">
+            <button id="buscarPedido">Buscar</button>
+        </div>
+        <div class="formulario">
+            <label for="semana">Semana:</label>
+            <select id="semana">
+                <option value="">Seleccione una semana</option>
+            </select>
+
+            <label for="dia">Día:</label>
+            <select id="dia">
+                <option value="">Seleccione un día</option>
+            </select>
+
+            <label for="comida">Comida:</label>
+            <select id="comida">
+                <option value="">Seleccione una comida</option>
+            </select>
+
+            <label for="guarnicion">Guarnición:</label>
+            <select id="guarnicion">
+                <option value="">Seleccione una guarnición</option>
+            </select>
+
+            <button id="guardarPedido">Guardar Pedido</button>
+        </div>
+
+        <h2>Listado de Pedidos</h2>
+        <table id="tablaPedidos">
+            <thead>
+                <tr>
+                    <th>Semana</th>
+                    <th>Día</th>
+                    <th>Comida</th>
+                    <th>Guarnición</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+  <script src="../js/pedidos.js"></script>
+</body>
+</html>

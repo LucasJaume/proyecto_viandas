@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(236, 245, 245);
+    text-align: center;
+}
+
+nav {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.cambiarTema {
+    display: flex;
+    align-items: center;
+}
+
+.temaOscuro {
+    background-color: aqua;
+    border: grey solid 1px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.temaOscuro:hover{
+    background-color:  aqua;
+    transform: scale(1.2);
+    border-radius: 5px;
+}
+
+.paginas ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.paginas li {
+    margin: 0 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.paginas li:hover {
+    background-color:  #f2f2f2;
+    transform: scale(1.2);
+    border-radius: 5px;
+}
+
+/* Estilos para la tanla */
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    border-right:1px solid gray ;
+}
+
+th {
+    background-color: #f1eeee;
+}
+
+td.disponible {
+    background-color: yellow;
+    color: black;
+}

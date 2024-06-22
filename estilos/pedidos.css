@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+nav {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.cambiarTema {
+    display: flex;
+    align-items: center;
+}
+
+.temaOscuro {
+    background-color: aqua;
+    border: grey solid 1px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.temaOscuro:hover {
+    background-color: aqua;
+    transform: scale(1.2);
+    border-radius: 5px;
+}
+
+.paginas ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.paginas li {
+    margin: 0 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.paginas li:hover {
+    background-color: #f2f2f2;
+    transform: scale(1.2);
+    border-radius: 5px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 25px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formulario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+label, select, input {
+    width: calc(50% - 10px);
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+select, input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+.busqueda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
