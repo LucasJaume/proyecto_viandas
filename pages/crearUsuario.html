@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear usuarios</title>
+    <link rel="stylesheet" href="../estilos/crearUsuarios.css">
+</head>
+<body>
+<nav>
+        <div class="cambiarTema">
+            <button class="temaOscuro">🌙</button>
+        </div>
+        <div class="paginas">
+            <ul>
+                <li><a href="../index.html">menu</a></li>
+                <li ><a href="#">Pedidos</a></li>
+                <li><a href="crearUsuario.html">Crear usuario</a></li>
+                <li><a href="login.html">Salir</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Crear Usuarios</h1>
+
+    <form id="formularioUsuario">
+        <label for="nombreUsuario">Nombre de usuario:</label>
+        <input type="text" id="nombreUsuario" required>
+        
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" required>
+        
+        <label for="rol">Rol:</label>
+        <select id="rolSelect">
+            <option value="2">RRHH</option>
+            <option value="3">Proveedor de servicio de viandas</option>
+            <option value="4">Empleado de i2T</option>
+        </select>
+        
+        <button type="submit">Crear Usuario</button>
+    </form>
+
+    <script src="../js/crearUsuarios.js"></script>
+</body>
+</html>

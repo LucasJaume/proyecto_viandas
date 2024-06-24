@@ -44,6 +44,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     cargarOpcionesDesdeJSON('guarnicion', guarnicionSelect, 'Seleccione una guarnición', 'id_guarnicion', 'nombre_guarnicion');
 
+    semanaSelect.disabled = true;
+    diaSelect.disabled = true;
+
+    comidaSelect.addEventListener('change', function() {
+        const comidaSeleccionada = comidaSelect.value;
+        if (comidaSeleccionada) {
+            semanaSelect.disabled = false;
+            diaSelect.disabled = false;
+        } else {
+            semanaSelect.disabled = true;
+            diaSelect.disabled = true;
+        }
+    });
+  
     guardarPedidoBtn.addEventListener('click', function() {
         const semana = semanaSelect.value;
         const dia = diaSelect.value;
@@ -96,6 +110,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function agregarEventosAcciones(fila) {
         const btnEditar = fila.querySelector('.editar');
         const btnEliminar = fila.querySelector('.eliminar');
+
+        const usuario = JSON.parse(sessionStorage.getItem('usuario'));
+        if (usuario && usuario.id_rol !== 2) {
+            btnEliminar.style.display = 'none';
+        }
 
         btnEditar.addEventListener('click', function() {
             const columnas = fila.querySelectorAll('td');
@@ -151,4 +170,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     habilitarBotonGuardar();
     setInterval(habilitarBotonGuardar, 60 * 60 * 1000); // Verificar cada hora
+
 });

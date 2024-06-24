@@ -5,7 +5,8 @@
 }
 
 body {
-    background-color: #f0f0f0;
+    background-color: rgb(236, 245, 245);
+    text-align: center;
 }
 
 nav {
@@ -129,4 +130,8 @@ th, td {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+}
+
+.eliminar{
+    margin-top: 5px;
 }

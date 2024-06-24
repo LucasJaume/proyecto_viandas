@@ -1,12 +1,7 @@
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-}
-
-body{
-    background-color: rgb(236, 245, 245);
-    text-align: center;
 }
 
 nav {
@@ -31,7 +26,6 @@ nav {
     font-size: 20px;
     cursor: pointer;
     transition: 0.5s;
-    padding: 12px;
 }
 
 .temaOscuro:hover {
@@ -59,42 +53,43 @@ nav {
     border-radius: 5px;
 }
 
-/* Estilos para la tanla */
+body {
+    background-color: rgb(236, 245, 245);
+}
 
 h1 {
     text-align: center;
 }
 
-table {
-    width: 80%;
-    border-collapse: collapse;
+form {
+    max-width: 400px;
     margin: 20px auto;
-    background-color: #fff;
-    border: 1px solid gray;
-    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
-th, td {
-    padding: 8px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-    border-right:1px solid gray ;
+label, input, select {
+    display: block;
+    margin-bottom: 10px;
 }
 
-th {
-    background-color: #f1eeee;
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
 
-.disponible {
-    background-color: yellow;
-    color: black;
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-#agregarPlatoForm{
-    padding: 15px;
-}
-
-
-select{
-    margin: 5px;
+button:hover {
+    background-color: #45a049;
 }

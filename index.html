@@ -13,10 +13,9 @@
         </div>
         <div class="paginas">
             <ul>
-                <li ><a href="pages/pedidos.html">Pedidos</a></li>
-                <li>Editar pedidos</li>
-                <li>Menu</li>
-                <li>Dar de alta rrhh</li>
+                <li><a href="#">menu</a></li>
+                <li><a href="pages/pedidos.html">Pedidos</a></li>
+                <li><a href="pages/crearUsuario.html">Crear usuarios</a></li>
                 <li><a href="pages/login.html">Salir</a></li>
             </ul>
         </div>
@@ -26,20 +25,41 @@
     <table id="menuTabla">
         <thead>
             <tr>
-                <th class="nombrePlato">Plato</th>
-                <th class="semana "></th>
-                <th class="semana"></th>
-                <th class="semana"></th>
-                <th class="semana"></th>
+                <th class="nombrePlato">Platos</th>
+                <th class="nombrePlato">Semanas</th>
             </tr>
         </thead>
         <tbody>
-            
+            <tr>
+                
+            </tr>
+            <tr>
+                
+            </tr>
         </tbody>
     </table>
 
-
-
+    <form id="agregarPlatoForm">
+        <h3>Agregar un plato nuevo</h3>
+        <label for="nombrePlato">Nombre del plato:</label>
+        <input type="text" id="nombrePlato" name="nombrePlato" required>
+        <br>
+        <label for="semanasDisponibles">Semanas disponibles:</label>
+        <select id="semanasDisponibles" name="semanasDisponibles" multiple required>
+            <option value="1">Semana 1</option>
+            <option value="2">Semana 2</option>
+            <option value="3">Semana 3</option>
+            <option value="4">Semana 4</option>
+        </select>
+        <br>
+        <label for="tipoPlato">Tipo de plato:</label>
+        <select id="tipoPlato" name="tipoPlato" required>
+            <option value="comida">Comida</option>
+            <option value="guarnicion">Guarnición</option>
+        </select>
+        <br>
+        <button type="submit">Agregar Plato</button>
+    </form>
     <script src="main.js"></script>
 </body>
 </html>
