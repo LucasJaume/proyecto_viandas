@@ -200,6 +200,16 @@
       "id_comida": 28,
       "nombre_comida": "Canelones de Verdura",
       "id": "b285"
+    },
+    {
+      "id": "d148",
+      "id_comida": 29,
+      "nombre_comida": "Pruebacomida"
+    },
+    {
+      "id": "85c0",
+      "id_comida": 30,
+      "nombre_comida": "Prueba comida 2"
     }
   ],
   "guarnicion": [
@@ -222,6 +232,26 @@
       "id_guarnicion": 30,
       "nombre_guarnicion": "Papa al horno",
       "id": "5741"
+    },
+    {
+      "id": "6783",
+      "id_guarnicion": 31,
+      "nombre_guarnicion": "prueba Guarnicion"
+    },
+    {
+      "id": "c335",
+      "id_guarnicion": 32,
+      "nombre_guarnicion": "prueba Guarnicion 2"
+    },
+    {
+      "id": "b1be",
+      "id_guarnicion": 33,
+      "nombre_guarnicion": "prueba Guarnicion 3"
+    },
+    {
+      "id": "11e2",
+      "id_guarnicion": 34,
+      "nombre_guarnicion": "prueba Guarnicion 4"
     }
   ],
   "menu_semana": [
@@ -245,13 +275,18 @@
         25,
         26,
         27,
-        28
+        28,
+        29,
+        30
       ],
       "guarnicion": [
         20,
         21,
         29,
-        30
+        30,
+        31,
+        32,
+        33
       ],
       "id": "0e13"
     },
@@ -276,13 +311,17 @@
         25,
         26,
         27,
-        28
+        28,
+        30
       ],
       "guarnicion": [
         20,
         21,
         29,
-        30
+        30,
+        31,
+        33,
+        34
       ],
       "id": "9f54"
     },
@@ -306,13 +345,17 @@
         25,
         26,
         27,
-        28
+        28,
+        30
       ],
       "guarnicion": [
         20,
         21,
         29,
-        30
+        30,
+        32,
+        33,
+        34
       ],
       "id": "d759"
     },
@@ -337,13 +380,17 @@
         25,
         26,
         27,
-        28
+        28,
+        30
       ],
       "guarnicion": [
         20,
         21,
         29,
-        30
+        30,
+        32,
+        33,
+        34
       ],
       "id": "de3a"
     }
