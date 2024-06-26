@@ -202,14 +202,9 @@
       "id": "b285"
     },
     {
-      "id": "d148",
-      "id_comida": 29,
-      "nombre_comida": "Pruebacomida"
-    },
-    {
-      "id": "85c0",
-      "id_comida": 30,
-      "nombre_comida": "Prueba comida 2"
+      "id_comida": "b05b",
+      "nombre_comida": "Pruebacomida",
+      "id": "b05b"
     }
   ],
   "guarnicion": [
@@ -234,24 +229,14 @@
       "id": "5741"
     },
     {
-      "id": "6783",
-      "id_guarnicion": 31,
-      "nombre_guarnicion": "prueba Guarnicion"
+      "id_guarnicion": "6783",
+      "nombre_guarnicion": "prueba Guarnicion",
+      "id": "6783"
     },
     {
-      "id": "c335",
-      "id_guarnicion": 32,
-      "nombre_guarnicion": "prueba Guarnicion 2"
-    },
-    {
-      "id": "b1be",
-      "id_guarnicion": 33,
-      "nombre_guarnicion": "prueba Guarnicion 3"
-    },
-    {
-      "id": "11e2",
-      "id_guarnicion": 34,
-      "nombre_guarnicion": "prueba Guarnicion 4"
+      "id_guarnicion": "c335",
+      "nombre_guarnicion": "prueba Guarnicion 2",
+      "id": "c335"
     }
   ],
   "menu_semana": [
@@ -276,8 +261,7 @@
         26,
         27,
         28,
-        29,
-        30
+        29
       ],
       "guarnicion": [
         20,
@@ -286,7 +270,7 @@
         30,
         31,
         32,
-        33
+        "c335"
       ],
       "id": "0e13"
     },
@@ -312,7 +296,8 @@
         26,
         27,
         28,
-        30
+        29,
+        "b05b"
       ],
       "guarnicion": [
         20,
@@ -320,8 +305,7 @@
         29,
         30,
         31,
-        33,
-        34
+        "c335"
       ],
       "id": "9f54"
     },
@@ -346,7 +330,7 @@
         26,
         27,
         28,
-        30
+        29
       ],
       "guarnicion": [
         20,
@@ -354,8 +338,7 @@
         29,
         30,
         32,
-        33,
-        34
+        "6783"
       ],
       "id": "d759"
     },
@@ -381,7 +364,7 @@
         26,
         27,
         28,
-        30
+        "b05b"
       ],
       "guarnicion": [
         20,
@@ -389,8 +372,7 @@
         29,
         30,
         32,
-        33,
-        34
+        "6783"
       ],
       "id": "de3a"
     }

@@ -6,6 +6,7 @@
 
 body{
     background-color: rgb(236, 245, 245);
+    color: black;
     text-align: center;
 }
 
@@ -88,6 +89,7 @@ th {
 .disponible {
     background-color: yellow;
     color: black;
+    max-width: 50px;
 }
 
 #agregarPlatoForm{
@@ -97,4 +99,22 @@ th {
 
 select{
     margin: 5px;
+    border-radius: 7px;
+}
+input{
+border-radius: 7px;
+}
+
+button{
+    padding: 3px;
+    margin: 3px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+button:hover{
+    transform: scale(1.05);
+    padding: 2px;
 }

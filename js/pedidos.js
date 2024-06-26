@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const guarnicionSelect = document.getElementById('guarnicion');
     const buscarSemanaInput = document.getElementById('buscarSemana');
 
-    let filaEnEdicion = null; // Variable para rastrear la fila en edición
+    let filaEnEdicion = null;
 
     function cargarOpcionesDesdeJSON(endpoint, elemento, textoDefault, valorId, nombre) {
         fetch(`http://localhost:3000/${endpoint}`)
@@ -57,7 +57,35 @@ document.addEventListener('DOMContentLoaded', function() {
             diaSelect.disabled = true;
         }
     });
-  
+
+    function cargarPedidos() {
+        fetch('http://localhost:3000/pedido_menu_proximo')
+            .then(response => response.json())
+            .then(data => {
+                tablaPedidos.querySelector('tbody').innerHTML = ''; 
+                data.forEach(pedido => {
+                    pedido.dia.forEach((dia, index) => {
+                        if (dia.id_comida.length > 0 || dia.id_guarnicion.length > 0) {
+                            const fila = document.createElement('tr');
+                            fila.innerHTML = `
+                                <td>${pedido.id_semana}</td>
+                                <td>${dias[index]}</td>
+                                <td>${dia.id_comida.join(', ')}</td>
+                                <td>${dia.id_guarnicion.join(', ')}</td>
+                                <td>
+                                    <button class="editar">Editar</button>
+                                    <button class="eliminar">Eliminar</button>
+                                </td>
+                            `;
+                            tablaPedidos.querySelector('tbody').appendChild(fila);
+                            agregarEventosAcciones(fila);
+                        }
+                    });
+                });
+            })
+            .catch(error => console.error('Error al cargar pedidos:', error));
+    }
+
     guardarPedidoBtn.addEventListener('click', function() {
         const semana = semanaSelect.value;
         const dia = diaSelect.value;
@@ -69,38 +97,28 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        if (filaEnEdicion) {
-            // Actualizar la fila existente
-            filaEnEdicion.innerHTML = `
-                <td>${semana}</td>
-                <td>${dia}</td>
-                <td>${comida}</td>
-                <td>${guarnicion}</td>
-                <td>
-                    <button class="editar">Editar</button>
-                    <button class="eliminar">Eliminar</button>
-                </td>
-            `;
-            agregarEventosAcciones(filaEnEdicion);
-            filaEnEdicion = null; // Restablecer la variable de seguimiento
-        } else {
-            // Crear una nueva fila
-            const fila = document.createElement('tr');
-            fila.innerHTML = `
-                <td>${semana}</td>
-                <td>${dia}</td>
-                <td>${comida}</td>
-                <td>${guarnicion}</td>
-                <td>
-                    <button class="editar">Editar</button>
-                    <button class="eliminar">Eliminar</button>
-                </td>
-            `;
-            tablaPedidos.querySelector('tbody').prepend(fila);
-            agregarEventosAcciones(fila);
-        }
+        const usuario = JSON.parse(sessionStorage.getItem('usuario'));
 
-        // Limpiar los campos del formulario después de guardar
+        const pedido = {
+            id_usuario: usuario.id_usuario,
+            id_semana: parseInt(semana),
+            dia: [{ id_comida: [parseInt(comidaSelect.value)], id_guarnicion: [parseInt(guarnicionSelect.value)] }, { id_comida: [], id_guarnicion: [] }, { id_comida: [], id_guarnicion: [] }, { id_comida: [], id_guarnicion: [] }, { id_comida: [], id_guarnicion: [] }]
+        };
+
+        fetch('http://localhost:3000/pedido_menu_proximo', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(pedido)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Pedido guardado:', data);
+            cargarPedidos(); 
+        })
+        .catch(error => console.error('Error al guardar el pedido:', error));
+
         semanaSelect.value = '';
         diaSelect.value = '';
         comidaSelect.value = '';
@@ -157,18 +175,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    function habilitarBotonGuardar() {
-        const fechaActual = new Date();
-        const diaSemana = fechaActual.getDay(); // 0 es domingo, 1 es lunes, ..., 6 es sábado
-
-        if (diaSemana >= 5 || diaSemana === 0) {
-            guardarPedidoBtn.disabled = false;
-        } else {
-            guardarPedidoBtn.disabled = true;
-        }
-    }
-
-    habilitarBotonGuardar();
-    setInterval(habilitarBotonGuardar, 60 * 60 * 1000); // Verificar cada hora
-
+    cargarPedidos(); 
 });

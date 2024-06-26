@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!usuario) {
         alert('Usuario no encontrado en sessionStorage.');
-        window.location.href = '../index.html'; // Redirigir a la página de inicio de sesión si no hay usuario
+        window.location.href = '../index.html'; 
         return;
     }
 
@@ -14,12 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
             hideOptionsExcept(rolSelect, [2,3])
             break;
         case 2: // RRHH
-            // Mostrar solo la opción de Empleado de i2T
             hideOptionsExcept(rolSelect, [4]);
             break;
         default:
             alert('No tienes permisos para acceder a esta página.');
-            window.location.href = '../index.html'; // Redirigir a la página de inicio u otra página adecuada
+            window.location.href = '../index.html'; 
             break;
     }
 
@@ -32,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('password').value;
         const rolId = document.getElementById('rolSelect').value;
 
-        // Verificar que no haya otro usuario con el mismo nombre
         if (await existeUsuario(nombreUsuario)) {
             alert('Ya existe un usuario con ese nombre. Por favor, elige otro.');
             return;
@@ -85,7 +83,7 @@ function hideOptionsExcept(selectElement, allowedValues) {
         if (!allowedValues.includes(parseInt(option.value))) {
             option.style.display = 'none';
         } else {
-            option.style.display = 'block'; // Asegurar que las opciones permitidas sean visibles
+            option.style.display = 'block'; 
         }
     }
 }
